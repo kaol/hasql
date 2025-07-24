@@ -259,6 +259,12 @@ inet :: Value Iproute.IPRange
 inet = Value (Value.decoder (const A.inet))
 
 -- |
+-- Decoder of the @MACADDR@ values.
+{-# INLINEABLE macaddr #-}
+macaddr :: Value Word64
+macaddr = Value (Value.decoder (const A.macaddr))
+
+-- |
 -- Decoder of the @JSON@ values into a JSON AST.
 {-# INLINEABLE json #-}
 json :: Value Aeson.Value

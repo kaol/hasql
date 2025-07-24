@@ -213,6 +213,14 @@ inet :: Value Iproute.IPRange
 inet = Value (Value.unsafePTIWithShow PTI.inet (const A.inet))
 
 -- |
+-- Encoder of @MACADDR@ values.
+--
+-- Represented as Word64 with upper 2 bytes ignored.
+{-# INLINEABLE macaddr #-}
+macaddr :: Value Word64
+macaddr = Value (Value.unsafePTIWithShow PTI.macaddr (const A.macaddr))
+
+-- |
 -- Encoder of @JSON@ values from JSON AST.
 {-# INLINEABLE json #-}
 json :: Value Aeson.Value
